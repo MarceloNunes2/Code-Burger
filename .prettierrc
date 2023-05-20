@@ -1,0 +1,7 @@
+{
+    "semi": false,
+    "singleQuote": true,
+    "usePrettierrc": false,
+    "withNodeModules": true
+    
+}
