@@ -16,7 +16,7 @@ class OrderController{
             ),
            
         })
-        console.log(request)
+        
         try{
             await schema.validateSync(request.body,{abortEarly: false})
         }catch(err){
@@ -33,16 +33,16 @@ class OrderController{
                 {
                     model: Category,
                     as: 'category',
-                    attributes:['name']
+                    attributes:['name'],
                 }
             ]
         })
 
         const editedProduct = updateProducts.map(product => {
 
-            const productsIndex = request.body.products.findIndex
-            (requestProduct => requestProduct.id === product.id)
-
+            const productsIndex = request.body.products.findIndex(
+            (requestProduct) => requestProduct.id === product.id
+            )
 
             const newProduct = {
                 id: product.id,
